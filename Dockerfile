@@ -9,9 +9,9 @@ ENV RELAY_PORT     22067
 # to enable the status interface add ' -p 22070:22070' to you docker command
 ENV STATUS_PORT     22070
 
-# 1000 mbps
+# 10 mbps
 ENV RATE_GLOBAL     10000000
-# 50 mbps
+# 500 kbps
 ENV RATE_SESSION    500000
 
 ENV TIMEOUT_MSG     1m45s

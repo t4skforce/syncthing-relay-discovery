@@ -49,8 +49,8 @@ docker run --name syncthing-relay -d -p 22067:22067 -p 22026:22026 -e DEBUG=true
 
 ### Syncthing-Relay Server
 
-* RATE_GLOBAL: global maximum speed for transfer / default:10000000 = 10mbps
-* RATE_SESSION: maximum speed for transfer per session / default:500000 = 500kbps
+* RATE_GLOBAL: global maximum speed for transfer / default:1000000000 = 1000mbps
+* RATE_SESSION: maximum speed for transfer per session / default:500000 = 50000kbps
 * TIMEOUT_MSG: change message timeout / default: 1m45s
 * TIMEOUT_NET: change net timeout / default: 3m30s
 * PING_INT: change ping timeout / default: 1m15s

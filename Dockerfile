@@ -65,7 +65,7 @@ RUN curl -Ls $(curl -Ls https://api.github.com/repos/syncthing/relaysrv/releases
 		&& cp /tmp/*discosrv*/*discosrv ${USER_HOME}/server/discosrv \
 		&& apt-get --auto-remove -y purge ${BUILD_REQUIREMENTS} \
 		&& rm -rf /var/lib/apt/lists/* \
-		rm -rf /tmp/*
+		&& rm -rf /tmp/*
 
 # supervisor
 COPY supervisord.conf ${USER_HOME}/supervisord.conf

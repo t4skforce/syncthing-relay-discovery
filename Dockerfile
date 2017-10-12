@@ -6,6 +6,7 @@ ENV DEBUG           false
 
 # Syncthing-Relay Server
 ENV RELAY_PORT     22067
+ENV RELAY_OPTS     ""
 # to enable the status interface add ' -p 22070:22070' to you docker command
 ENV STATUS_PORT     22070
 

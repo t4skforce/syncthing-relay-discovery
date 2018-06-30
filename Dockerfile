@@ -2,8 +2,6 @@ FROM debian:latest
 ########################################
 #              Settings                #
 ########################################
-ENV DEBUG           false
-
 # Syncthing-Relay Server
 ENV RELAY_PORT     22067
 ENV RELAY_OPTS     ""
@@ -25,13 +23,7 @@ ENV POOLS           ""
 
 # Syncthing-Discovery Server
 ENV DISCO_PORT      22026
-
-# Allowed average package rate, per 10 s
-ENV LIMIT_AVG       10
-# Allowed burst size, packets
-ENV LIMIT_BURST     20
-# Limiter cache entries
-ENV LIMIT_CACHE     25000
+ENV DISCO_OPTS      ""
 
 ########################################
 #               Setup                  #

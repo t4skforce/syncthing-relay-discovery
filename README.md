@@ -31,16 +31,17 @@ chown -R 1000:1000 /your/home/certs
 
 There are several configuarion options available. The options are configurable via environment variables (docker default):
 
-Example enablin debug mode:
+Example enabling debug mode:
 ```bash
-export DEBUG=true
+export RELAY_OPTS='-debug'
+export DISCO_OPTS='-debug'
 docker run --name syncthing-relay-discovery -d -p 22067:22067 -p 22026:22026 --restart=always t4skforce/syncthing-relay-discovery:latest
 ```
 
 or
 
 ```bash
-docker run --name syncthing-relay -d -p 22067:22067 -p 22026:22026 -e DEBUG=true --restart=always t4skforce/syncthing-relay-discovery:latest
+docker run --name syncthing-relay-discovery -d -p 22067:22067 -p 22026:22026 -e RELAY_OPTS='-debug' -e DISCO_OPTS='-debug' --restart=always t4skforce/syncthing-relay-discovery:latest
 ```
 
 ## Options
@@ -63,8 +64,7 @@ docker run --name syncthing-relay -d -p 22067:22067 -p 22026:22026 -e DEBUG=true
 
 ### Syncthing-Discovery Server
 * DISCO_PORT: port the discovery server listens on / default:22026
-* LIMIT_AVG: Allowed average package rate, per 10 s / default:10
-* LIMIT_BURST: Allowed burst size, packets / default:20
-* LIMIT_CACHE: Limiter cache entries / default:25000
+* DISCO_OPTS: to provide addition options not configurable via env variables above / default: ""
+  - example: `-e RELAY_OPTS='-metrics-listen=:19201'`
 
 Have a look at the current doc [GitHub - relaysrv](https://github.com/syncthing/relaysrv/blob/master/README.md) [GitHub - discosrv](https://github.com/syncthing/discosrv/blob/master/README.md)

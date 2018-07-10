@@ -40,10 +40,10 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 ########################################
 #               Build                  #
 ########################################
-ENV RELAY_VERSION "v0.14.48"
-ENV DISCO_VERSION "v0.14.48"
+ENV RELAY_VERSION ""
+ENV DISCO_VERSION ""
 ENV RELAY_DOWNLOADURL ""
-ENV DISCO_DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v0.14.48/stdiscosrv-linux-amd64-v0.14.48.tar.gz"
+ENV DISCO_DOWNLOADURL ""
 ########################################
 
 USER root

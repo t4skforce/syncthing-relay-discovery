@@ -37,6 +37,15 @@ ENV BUILD_REQUIREMENTS curl
 ENV REQUIREMENTS ca-certificates openssl supervisor
 ########################################
 
+########################################
+#               Build                  #
+########################################
+ENV RELAY_VERSION ""
+ENV DISCO_VERSION ""
+ENV RELAY_DOWNLOADURL ""
+ENV DISCO_DOWNLOADURL ""
+########################################
+
 USER root
 ENV DEBIAN_FRONTEND noninteractive
 # setup
@@ -47,8 +56,8 @@ RUN apt-get update -qqy \
 
 # install server
 WORKDIR /tmp/
-RUN curl -Ls $(curl -Ls https://api.github.com/repos/syncthing/relaysrv/releases/latest | egrep "browser_download_url.*relaysrv-linux-amd64.*.gz" | cut -d'"' -f4) --output relaysrv.tar.gz \
-		&& curl -Ls $(curl -Ls https://api.github.com/repos/syncthing/discosrv/releases/latest | egrep "browser_download_url.*discosrv-linux-amd64.*.gz" | cut -d'"' -f4) --output discosrv.tar.gz \
+RUN curl -Ls ${RELAY_DOWNLOADURL} --output relaysrv.tar.gz \
+		&& curl -Ls ${DISCO_DOWNLOADURL} --output discosrv.tar.gz \
 		&& tar -zxf relaysrv.tar.gz \
 		&& tar -zxf discosrv.tar.gz \
 		&& rm relaysrv.tar.gz \

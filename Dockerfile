@@ -40,7 +40,7 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 ########################################
 #               Build                  #
 ########################################
-ENV RELAY_VERSION ""
+ENV RELAY_VERSION "v0.14.48"
 ENV DISCO_VERSION ""
 ENV RELAY_DOWNLOADURL ""
 ENV DISCO_DOWNLOADURL ""

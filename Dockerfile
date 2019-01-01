@@ -40,9 +40,9 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 ########################################
 #               Build                  #
 ########################################
-ENV RELAY_VERSION "v0.14.48"
+ENV RELAY_VERSION "v1.0.0"
 ENV DISCO_VERSION "v0.14.51"
-ENV RELAY_DOWNLOADURL "https://github.com/syncthing/relaysrv/releases/download/v0.14.48/strelaysrv-linux-amd64-v0.14.48.tar.gz"
+ENV RELAY_DOWNLOADURL "https://github.com/syncthing/relaysrv/releases/download/v1.0.0/strelaysrv-linux-amd64-v1.0.0.tar.gz"
 ENV DISCO_DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v0.14.51/stdiscosrv-linux-amd64-v0.14.51.tar.gz"
 ########################################
 

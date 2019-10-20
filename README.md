@@ -45,6 +45,24 @@ or
 docker run --name syncthing-relay-discovery -d -p 22067:22067 -p 22026:22026 -e RELAY_OPTS='-debug' -e DISCO_OPTS='-debug' --restart=always t4skforce/syncthing-relay-discovery:latest
 ```
 
+## Docker Compose
+
+```bash
+---
+version: '3'
+
+services:
+  syncthing-relay-discovery:
+    restart: always
+    image: t4skforce/syncthing-relay-discovery:latest
+    environment:
+      RELAY_OPTS: '-debug'
+      DISC_OPTS: '-debug'
+    ports:
+      - 22067:22067
+      - 22026:22026
+```
+
 ## Options
 
 * DEBUG: enable debugging (true/false) / default:false
@@ -58,7 +76,7 @@ docker run --name syncthing-relay-discovery -d -p 22067:22067 -p 22026:22026 -e 
 * PING_INT: change ping timeout / default: 1m15s
 * PROVIDED_BY: change provided by string / default:"syncthing-relay"
 * RELAY_PORT: port the relay server listens on / default:22067
-* STATUS_PORT: disable by default to enable it add `-d 22070:22070` to you `docker run` command  / default:22070
+* STATUS_PORT: disable by default to enable it add `-p 22070:22070` to you `docker run` command  / default:22070
 * POOLS: leave empty for private relay use "https://relays.syncthing.net/endpoint" for public relay / default: ""
 * RELAY_OPTS: to provide addition options not configurable via env variables above / default: ""
   - example: `-e RELAY_OPTS='-ext-address=:443'`
@@ -66,6 +84,6 @@ docker run --name syncthing-relay-discovery -d -p 22067:22067 -p 22026:22026 -e 
 ### Syncthing-Discovery Server
 * DISCO_PORT: port the discovery server listens on / default:22026
 * DISCO_OPTS: to provide addition options not configurable via env variables above / default: ""
-  - example: `-e RELAY_OPTS='-metrics-listen=:19201'`
+  - example: `-e DISCO_OPTS='-metrics-listen=:19201'`
 
 Have a look at the current doc [GitHub - relaysrv](https://github.com/syncthing/relaysrv/blob/master/README.md) [GitHub - discosrv](https://github.com/syncthing/discosrv/blob/master/README.md)

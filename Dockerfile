@@ -41,9 +41,9 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 #               Build                  #
 ########################################
 ENV RELAY_VERSION "v1.3.1"
-ENV DISCO_VERSION "v1.2.2"
+ENV DISCO_VERSION "v1.3.1"
 ENV RELAY_DOWNLOADURL "https://github.com/syncthing/relaysrv/releases/download/v1.3.1/strelaysrv-linux-amd64-v1.3.1.tar.gz"
-ENV DISCO_DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v1.2.2/stdiscosrv-linux-amd64-v1.2.2.tar.gz"
+ENV DISCO_DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v1.3.1/stdiscosrv-linux-amd64-v1.3.1.tar.gz"
 ########################################
 
 USER root

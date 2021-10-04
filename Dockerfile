@@ -40,9 +40,9 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 ########################################
 #               Build                  #
 ########################################
-ARG RELAY_VERSION=""
+ARG RELAY_VERSION="v1.15.0"
 ARG DISCO_VERSION=""
-ARG RELAY_DOWNLOADURL=""
+ARG RELAY_DOWNLOADURL="https://github.com/syncthing/relaysrv/releases/download/v1.15.0/strelaysrv-linux-amd64-v1.15.0.tar.gz"
 ARG DISCO_DOWNLOADURL=""
 ARG BUILD_DATE="20211004"
 ########################################

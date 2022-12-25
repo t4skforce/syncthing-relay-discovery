@@ -44,7 +44,7 @@ ARG RELAY_VERSION="v1.22.1"
 ARG DISCO_VERSION="v1.18.6"
 ARG RELAY_DOWNLOADURL="https://github.com/syncthing/relaysrv/releases/download/v1.22.1/strelaysrv-linux-amd64-v1.22.1.tar.gz"
 ARG DISCO_DOWNLOADURL="https://github.com/syncthing/discosrv/releases/download/v1.18.6/stdiscosrv-linux-amd64-v1.18.6.tar.gz"
-ARG BUILD_DATE="2022-12-25T03:02:14Z"
+ARG BUILD_DATE="2022-12-25T03:02:43Z"
 ########################################
 
 USER root

@@ -41,9 +41,9 @@ ENV REQUIREMENTS ca-certificates openssl supervisor
 #               Build                  #
 ########################################
 ARG RELAY_VERSION="v1.29.4"
-ARG DISCO_VERSION="v1.23.4"
+ARG DISCO_VERSION="v1.29.4"
 ARG RELAY_DOWNLOADURL="https://github.com/syncthing/relaysrv/releases/download/v1.29.4/strelaysrv-linux-amd64-v1.29.4.tar.gz"
-ARG DISCO_DOWNLOADURL="https://github.com/syncthing/discosrv/releases/download/v1.23.4/stdiscosrv-linux-amd64-v1.23.4.tar.gz"
+ARG DISCO_DOWNLOADURL="https://github.com/syncthing/discosrv/releases/download/v1.29.4/stdiscosrv-linux-amd64-v1.29.4.tar.gz"
 ARG BUILD_DATE="2025-04-11T14:09:33Z"
 ########################################
 

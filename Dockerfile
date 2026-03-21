@@ -3,38 +3,38 @@ FROM debian:latest
 #              Settings                #
 ########################################
 # Syncthing-Relay Server
-ENV RELAY_PORT     22067
-ENV RELAY_OPTS     ""
+ENV RELAY_PORT=22067
+ENV RELAY_OPTS=""
 # to enable the status interface add ' -p 22070:22070' to you docker command
-ENV STATUS_PORT     22070
+ENV STATUS_PORT=22070
 
 # 10 mbps
-ENV RATE_GLOBAL     10000000
+ENV RATE_GLOBAL=10000000
 # 500 kbps
-ENV RATE_SESSION    500000
+ENV RATE_SESSION=500000
 
-ENV TIMEOUT_MSG     1m45s
-ENV TIMEOUT_NET     3m30s
-ENV PING_INT        1m15s
+ENV TIMEOUT_MSG=1m45s
+ENV TIMEOUT_NET=3m30s
+ENV PING_INT=1m15s
 
-ENV PROVIDED_BY     "syncthing-relay"
+ENV PROVIDED_BY="syncthing-relay"
 # leave empty for private relay use "https://relays.syncthing.net/endpoint" for public relay
-ENV POOLS           ""
+ENV POOLS=""
 
 # Syncthing-Discovery Server
-ENV DISCO_PORT      22026
-ENV DISCO_OPTS      ""
+ENV DISCO_PORT=22026
+ENV DISCO_OPTS=""
 
 ########################################
 #               Setup                  #
 ########################################
-ENV USERNAME syncthing
-ENV USERGROUP syncthing
-ENV APPUID 1000
-ENV APPGID 1000
-ENV USER_HOME /home/syncthing
-ENV BUILD_REQUIREMENTS curl
-ENV REQUIREMENTS ca-certificates openssl supervisor
+ENV USERNAME=syncthing
+ENV USERGROUP=syncthing
+ENV APPUID=1000
+ENV APPGID=1000
+ENV USER_HOME=/home/syncthing
+ENV BUILD_REQUIREMENTS=curl
+ENV REQUIREMENTS="ca-certificates openssl supervisor"
 ########################################
 
 ########################################
@@ -48,7 +48,7 @@ ARG BUILD_DATE="2025-05-12T07:16:21Z"
 ########################################
 
 USER root
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 # setup
 RUN apt-get update -qqy \
 	&& apt-get -qqy --no-install-recommends install ${BUILD_REQUIREMENTS} ${REQUIREMENTS} \
@@ -85,4 +85,4 @@ VOLUME ${USER_HOME}/certs
 
 USER $USERNAME
 WORKDIR ${USER_HOME}/server/
-CMD /usr/bin/supervisord -c "${USER_HOME}/supervisord.conf"
+CMD ["/usr/bin/supervisord", "-c", "${USER_HOME}/supervisord.conf"]
